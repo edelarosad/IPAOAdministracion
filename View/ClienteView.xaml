@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="IPAO.Administracion.View.ClienteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IPAO.Administracion.View"
+             xmlns:viewModel="clr-namespace:IPAO.Administracion.ViewModel"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel x:Name="pnlAddButton"
+                        Grid.Row="0"
+                        Orientation="Horizontal"
+                        FlowDirection="RightToLeft"
+                        Margin="5,10,5,10"
+                        MouseLeftButtonDown="pnlAddButton_MouseLeftButtonDown"
+                        MouseEnter="pnlAddButton_MouseEnter">
+                <Button x:Name="btnAddClient"
+                        Style="{StaticResource addButton}"
+                        Tag="{StaticResource color3}"
+                        Click="btnAddClient_Click">
+                    <fa:IconImage Icon="UserPlus" Height="30" Width="30" Style="{StaticResource controlButtonIcon}"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <DataGrid x:Name="clientes" AutoGenerateColumns="False" CanUserAddRows="False" AlternatingRowBackground="{StaticResource color7}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Path=ClienteId}"/>
+                        <DataGridTextColumn Header="Cliente" Binding="{Binding Path=Nombrecliente}"/>
+                        <DataGridTextColumn Header="Direccion" Binding="{Binding Path=Direccion}"/>
+                        <DataGridTextColumn Header="Telefono" Binding="{Binding Path=Telefono}"/>
+                        <DataGridTextColumn Header="Email" Binding="{Binding Path=Email}"/>
+                        <DataGridTextColumn Header="RFC" Binding="{Binding Path=Rfc}"/>
+                        <DataGridTextColumn Header="Tipo Persona" Binding="{Binding Path=Tipopersona}"/>
+                        <DataGridTextColumn Header="Regimen Fiscal" Binding="{Binding Path=Regimenfiscal}"/>
+                        <DataGridTextColumn Header="Folios Digitales" Binding="{Binding Path=Foliosdigitales}"/>
+                        <DataGridTextColumn Header="Contabilidad" Binding="{Binding Path=Contabilidad}"/>
+                        <DataGridTextColumn Header="Microsip" Binding="{Binding Path=Microsip}"/>
+                        <DataGridTextColumn Header="Contacto" Binding="{Binding Path=Informacioncontacto}"/>
+                        <DataGridTemplateColumn Header="Editar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnEdit" Click="btnEdit_Click" Margin="0,0,0,5">
+                                        <fa:IconImage Icon="UserEdit" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Eliminar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnDelete" Click="btnDelete_Click">
+                                        <fa:IconImage Icon="MinusCircle" Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            
+            
+        </Grid>
+    </Border>
+</UserControl>
