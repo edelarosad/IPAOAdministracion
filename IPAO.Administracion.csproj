@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BoolToVisibilityConverter.cs" />
     <Compile Include="CustomControls\BindablePassword.xaml.cs">
       <DependentUpon>BindablePassword.xaml</DependentUpon>
     </Compile>
@@ -74,6 +75,7 @@
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="ViewModel\ClienteViewModel.cs" />
+    <Compile Include="ViewModel\DataCaptureAccountingViewModel.cs" />
     <Compile Include="ViewModel\DataCaptureViewModel.cs" />
     <Compile Include="ViewModel\EditClientViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
@@ -84,6 +86,9 @@
     <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="View\ClienteView.xaml.cs">
       <DependentUpon>ClienteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataCaptureAccountingView.xaml.cs">
+      <DependentUpon>DataCaptureAccountingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DataCaptureView.xaml.cs">
       <DependentUpon>DataCaptureView.xaml</DependentUpon>
@@ -125,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ClienteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataCaptureAccountingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

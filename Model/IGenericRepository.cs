@@ -13,10 +13,13 @@ namespace IPAO.Administracion.Model
         bool EditClient(ClienteModel usuarioModel);
         bool RemoveClient(int Id);
         ClienteModel GetByClientId(int id);
-        ClienteModel GetClientByName(string name);
+        DataCaptureViewModel GetClientByName(string name);
+        DataCaptureAccountingViewModel GetClientByNameAccounting(string name);
         List<ClienteViewModel> GetAllClients();
         List<string> GetAllTipoPersona();
         List<string> GetAllRegimenFiscal();
         List<string> GetAllClientsCombobox();
+        RespuestaBDViewModel AddOrEditDataCapture(DataCaptureViewModel dataCapture);
+        RespuestaBDViewModel AddOrEditDataCaptureAccounting(DataCaptureAccountingViewModel dataCapture);
     }
 }

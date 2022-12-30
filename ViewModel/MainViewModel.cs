@@ -79,6 +79,7 @@ namespace IPAO.Administracion.ViewModel
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowClienteViewCommand { get; }
         public ICommand ShowDataCaptureViewCommand { get; }
+        public ICommand ShowDataCaptureAccountingCommand { get; }
 
         public MainViewModel()
         {
@@ -89,7 +90,7 @@ namespace IPAO.Administracion.ViewModel
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowClienteViewCommand = new ViewModelCommand(ExecuteShowClienteViewCommand);
             ShowDataCaptureViewCommand = new ViewModelCommand(ExecuteShowDataCaptureViewCommand);
-
+            ShowDataCaptureAccountingCommand = new ViewModelCommand(ExecuteShowDataCaptureAccountingViewCommand);
             //Default view
             ExecuteShowHomeViewCommand(null);
 
@@ -97,7 +98,14 @@ namespace IPAO.Administracion.ViewModel
 
         }
 
-        private void ExecuteShowDataCaptureViewCommand(object obj)
+        private void ExecuteShowDataCaptureAccountingViewCommand(object obj)
+        {
+            CurrentChildView = new DataCaptureAccountingViewModel();
+            Caption = "Captura de datos Contabilidad";
+            Icon = IconChar.Keyboard;
+        }
+
+        public void ExecuteShowDataCaptureViewCommand(object obj)
         {
             CurrentChildView = new DataCaptureViewModel();
             Caption = "Captura de datos";
@@ -127,6 +135,9 @@ namespace IPAO.Administracion.ViewModel
                 CuentaActualUsuario.NombreUsuario = user.NombreUsuario;
                 CuentaActualUsuario.DisplayName = $"Bienvenido {user.Nombre}";
                 CuentaActualUsuario.ProfilePicture = null;
+                CuentaActualUsuario.CapturaDatos = user.CapturaDatos;
+                CuentaActualUsuario.Contabilidad = user.Contabilidad;
+                CuentaActualUsuario.Configuracion = user.Configuracion;
             }
             else
             {

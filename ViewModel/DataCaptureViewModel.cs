@@ -14,6 +14,9 @@ namespace IPAO.Administracion.ViewModel
         private int _CapturaDatosId;
         private int _ClienteId;
         private string _NombreCliente;
+        private bool _ServFoliosDigitales;
+        private bool _ServContabilidad;
+        private bool _ServMicrosip;
         private string _UsuarioFolioDigital;
         private string _PasswordFolioDigital;
         private string _PasswordCiec;
@@ -85,6 +88,45 @@ namespace IPAO.Administracion.ViewModel
                 OnPropertyChanged(nameof(NombreCliente));
             }
         }
+
+        public bool ServFoliosDigitales
+        {
+            get
+            {
+                return _ServFoliosDigitales;
+            }
+            set
+            {
+                _ServFoliosDigitales = value;
+                OnPropertyChanged(nameof(ServFoliosDigitales));
+            }
+        }
+
+        public bool ServContabilidad
+        {
+            get
+            {
+                return _ServContabilidad;
+            }
+            set
+            {
+                _ServContabilidad = value;
+                OnPropertyChanged(nameof(ServContabilidad));
+            }
+        }
+        public bool ServMicrosip
+        {
+            get
+            {
+                return _ServMicrosip;
+            }
+            set
+            {
+                _ServMicrosip = value;
+                OnPropertyChanged(nameof(ServMicrosip));
+            }
+        }
+
         public string UsuarioFolioDigital
         {
             get
@@ -529,6 +571,14 @@ namespace IPAO.Administracion.ViewModel
         {
             var lstClients = genericRepository.GetAllClientsCombobox();
             return lstClients;
+        }
+
+        public DataCaptureViewModel GetClientByName(string name)
+        {
+            DataCaptureViewModel cliente = new DataCaptureViewModel();
+            cliente = genericRepository.GetClientByName(name);
+
+            return cliente;
         }
     }
 }

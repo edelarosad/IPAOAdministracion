@@ -11,5 +11,8 @@ namespace IPAO.Administracion.Model
         public string NombreUsuario { get; set; }
         public string DisplayName { get; set; }
         public byte[] ProfilePicture { get; set; }
+        public bool CapturaDatos { get; set; }
+        public bool Contabilidad { get; set; }
+        public bool Configuracion { get; set; }
     }
 }

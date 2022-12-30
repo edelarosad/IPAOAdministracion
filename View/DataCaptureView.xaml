@@ -9,13 +9,14 @@
     <Border Background="White">
         <Grid>
             <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="446" Margin="10,102,0,0" VerticalAlignment="Top" Width="1000">
-                <TabItem Header="Folios Digitales y Contabilidad">
+                <TabItem x:Name="tiFC" Header="Folios Digitales y Contabilidad">
                     <Grid Background="#FFE5E5E5" Margin="0,0,0,3">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="191*"/>
-                            <ColumnDefinition Width="583*"/>
+                            <ColumnDefinition Width="201*"/>
+                            <ColumnDefinition Width="44*"/>
+                            <ColumnDefinition Width="749*"/>
                         </Grid.ColumnDefinitions>
-                        <GroupBox x:Name="groupBox" Header="Folios Digitales" HorizontalAlignment="Left" Height="116" Margin="10,10,0,0" VerticalAlignment="Top" Width="733" Grid.ColumnSpan="2">
+                        <GroupBox x:Name="gbFoliosDigitales" Header="Folios Digitales" HorizontalAlignment="Left" Height="116" Margin="10,10,0,0" VerticalAlignment="Top" Width="733" Grid.ColumnSpan="3">
                             <Grid>
                                 <Label x:Name="label" Content="Usuario:" HorizontalAlignment="Left" Margin="184,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.716,0.408"/>
                                 <TextBox x:Name="txtUsuarioFD" HorizontalAlignment="Left" Height="23" Margin="243,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="265"/>
@@ -23,7 +24,7 @@
                                 <TextBox x:Name="txtPasswordFD" HorizontalAlignment="Left" Height="23" Margin="243,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="265"/>
                             </Grid>
                         </GroupBox>
-                        <GroupBox x:Name="groupBox1" Header="Contabilidad" HorizontalAlignment="Left" Height="209" Margin="10,153,0,0" VerticalAlignment="Top" Width="716" Grid.ColumnSpan="2">
+                        <GroupBox x:Name="gbContabilidad" Header="Contabilidad" HorizontalAlignment="Left" Height="209" Margin="10,153,0,0" VerticalAlignment="Top" Width="716" Grid.ColumnSpan="3">
                             <Grid>
                                 <Label x:Name="label4" Content="Contraseña(CIEC):" HorizontalAlignment="Left" Margin="133,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="-9.526,-0.481"/>
                                 <TextBox x:Name="txtPasswordCIEC" HorizontalAlignment="Left" Height="23" Margin="242,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
@@ -32,7 +33,7 @@
                                 <Label x:Name="label6" Content="Fecha Vigencia:" HorizontalAlignment="Left" Margin="145,75,0,0" VerticalAlignment="Top"/>
                                 <DatePicker x:Name="dtpFechaVigenciaFE" HorizontalAlignment="Left" Margin="242,77,0,0" VerticalAlignment="Top" Width="261"/>
                                 <Label x:Name="label7" Content="Contraseña(Sello Digital):" HorizontalAlignment="Left" Margin="94,108,0,0" VerticalAlignment="Top"/>
-                                <TextBox x:Name="txtPasswordSD" HorizontalAlignment="Left" Height="23" Margin="242,108,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="261"/>
+                                <TextBox x:Name="txtPasswordSD" HorizontalAlignment="Left" Height="23" Margin="242,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
                                 <Label x:Name="label8" Content="Fecha Vigencia:" HorizontalAlignment="Left" Margin="145,139,0,0" VerticalAlignment="Top"/>
                                 <DatePicker x:Name="dtpFechaVigenciaSD" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,139,0,0" Width="261"/>
 
@@ -40,7 +41,7 @@
                         </GroupBox>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Microsip">
+                <TabItem x:Name="tiMicrosip" Header="Microsip">
                     <Grid Background="#FFE5E5E5" Margin="0,0,0,-3">
                         <Label x:Name="label9" Content="Tipo Usuario:" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-11.605,-1.577"/>
                         <ComboBox x:Name="cmbTipoUsuario" HorizontalAlignment="Left" Margin="106,14,0,0" VerticalAlignment="Top" Width="139"/>

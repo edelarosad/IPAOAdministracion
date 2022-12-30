@@ -207,12 +207,5 @@ namespace IPAO.Administracion.ViewModel
             return delete;
         }
 
-        public ClienteModel GetClientByName(string name)
-        {
-            ClienteModel cliente = new ClienteModel();
-            cliente = genericRepository.GetClientByName(name);
-
-            return cliente;
-        }
     }
 }

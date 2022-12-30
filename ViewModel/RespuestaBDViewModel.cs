@@ -44,5 +44,19 @@ namespace IPAO.Administracion.ViewModel
         {
             genericRepository = new GenericRepository();
         }
+
+        public RespuestaBDViewModel AddOrEditDataCapture(DataCaptureViewModel dataCapture)
+        {
+            var respuestaBD = genericRepository.AddOrEditDataCapture(dataCapture);
+
+            return respuestaBD;
+        }
+
+        public RespuestaBDViewModel AddOrEditDataCaptureAccounting(DataCaptureAccountingViewModel dataCapture)
+        {
+            var respuestaBD = genericRepository.AddOrEditDataCaptureAccounting(dataCapture);
+
+            return respuestaBD;
+        }
     }
 }

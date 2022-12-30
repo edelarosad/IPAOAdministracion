@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\EmmanueldelaRosaDomi\source\repos\IPAO.Administracion\App.xaml
-10-126576592
+11-1110166194
 
-32-395889403
+35-1223491468
 16-1704477169
-CustomControls\BindablePassword.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\ClienteView.xaml;View\DataCaptureView.xaml;View\EditClientModal.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainView.xaml;
+CustomControls\BindablePassword.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\ClienteView.xaml;View\DataCaptureAccountingView.xaml;View\DataCaptureView.xaml;View\EditClientModal.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainView.xaml;
 
 False
 

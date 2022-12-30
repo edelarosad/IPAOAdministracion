@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:IPAO.Administracion.View"
         xmlns:viewModel="clr-namespace:IPAO.Administracion.ViewModel"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:SimpleConvert="clr-namespace:IPAO.Administracion"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
@@ -30,6 +31,10 @@
             <local:DataCaptureView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:DataCaptureAccountingViewModel}">
+            <local:DataCaptureAccountingView/>
+        </DataTemplate>
+
     </Window.Resources>
     
 
@@ -46,6 +51,9 @@
                     <!--Content section-->
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <SimpleConvert:BoolToVisibilityConverter x:Key="converter"/>
+                </Grid.Resources>
                 
                 <!--Navigation Menu-->
                 <Border CornerRadius="10,0,0,10"
@@ -84,10 +92,20 @@
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
                                      Tag="{StaticResource color1}"
-                                     Command="{Binding ShowDataCaptureViewCommand}">
+                                     Command="{Binding ShowDataCaptureViewCommand}"
+                                     Visibility="{Binding Path=CuentaActualUsuario.CapturaDatos, Converter={StaticResource converter}}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Keyboard" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Captura de Datos" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton Style="{StaticResource menuButton}"
+                                     Tag="{StaticResource color1}"
+                                     Command="{Binding ShowDataCaptureAccountingCommand}"
+                                     Visibility="{Binding Path=CuentaActualUsuario.Contabilidad, Converter={StaticResource converter}}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="Keyboard" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Captura Datos Contabilidad" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
@@ -99,7 +117,8 @@
                             </StackPanel>
                         </RadioButton>
                         <RadioButton Style="{StaticResource menuButton}"
-                                     Tag="{StaticResource color1}">
+                                     Tag="{StaticResource color1}"
+                                     Visibility="{Binding Path=CuentaActualUsuario.Configuracion, Converter={StaticResource converter}}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Gears" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Configuracion" Style="{StaticResource menuButtonText}"/>

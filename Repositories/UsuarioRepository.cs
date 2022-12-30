@@ -69,7 +69,11 @@ namespace IPAO.Administracion.Repositories
                             Password = string.Empty,
                             Nombre = reader[3].ToString(),
                             Apellido = reader[4].ToString(),
-                            Email = reader[5].ToString()
+                            Email = reader[5].ToString(),
+                            CapturaDatos = bool.Parse(reader[6].ToString()),
+                            Contabilidad = bool.Parse(reader[7].ToString()),
+                            Configuracion = bool.Parse(reader[8].ToString()),
+                            bActivo = bool.Parse(reader[9].ToString())
                         };
                     }
                 }
